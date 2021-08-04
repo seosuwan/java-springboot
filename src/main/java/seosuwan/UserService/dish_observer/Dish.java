@@ -1,4 +1,4 @@
-package seosuwan.UserService.dish;
+package seosuwan.UserService.dish_observer;
 
 import lombok.Data;
 
