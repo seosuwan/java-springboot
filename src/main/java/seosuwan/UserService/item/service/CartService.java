@@ -12,18 +12,5 @@ import seosuwan.UserService.item.repository.ItemRepository;
 @RequiredArgsConstructor
 public class CartService {
 
-    private final ItemRepository itemRepository;
-    private final CartRepository cartRepository;
 
-    CartService(ItemRepository itemRepository, CartRepository cartRepository){
-        this.itemRepository = itemRepository;
-        this.cartRepository = cartRepository;
-
-    }
-    Mono<Cart> addToCart(String cartId, String id){
-        return this.cartRepository.findAllById(cartId)
-                .defaultIfEmpty(new Cart(cartId))
-                .flatMap(cart -> cart.getCartItems().stream())
-                    .filter(cartItem -> cartItem.getItem())
-    }
 }

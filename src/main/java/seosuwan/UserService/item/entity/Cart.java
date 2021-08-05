@@ -8,18 +8,20 @@ import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data public class Cart {
+@Data
+public class Cart {
 
     private @Id String id;
-    private List<CartItem> cartitems;
+    private List<CartItem> cartItems;
 
     private  Cart(){}
 
     public Cart(String id){
         this(id, new ArrayList<>());
     }
-    public Cart(String id,List<CartItem> cartitems){
+    public Cart(String id,List<CartItem> cartItems){
         this.id = id;
-        this.cartitems = cartitems;
+        this.cartItems = cartItems;
+
     }
 }
